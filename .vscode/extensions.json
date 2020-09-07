@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "akamud.vscode-theme-onedark",
+    "esbenp.prettier-vscode",
+    "alefragnani.Bookmarks",
+    "CoenraadS.bracket-pair-colorizer",
+    "cssho.vscode-svgviewer",
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "jpoissonnier.vscode-styled-components",
+    "PKief.material-icon-theme",
+    "streetsidesoftware.code-spell-checker",
+    "Shan.code-settings-sync",
+    "ritwickdey.LiveServer",
+    "riazxrazor.html-to-jsx"
+  ]
+}

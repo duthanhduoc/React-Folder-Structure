@@ -1,0 +1,6 @@
+export const GET_PRODUCT_LIST_REQUESTED =
+  'views/ProductList/GET_PRODUCT_LIST_REQUESTED'
+export const GET_PRODUCT_LIST_SUCCESS =
+  'views/ProductList/GET_PRODUCT_LIST_SUCCESS'
+export const GET_PRODUCT_LIST_FAILED =
+  'views/ProductList/GET_PRODUCT_LIST_FAILED'
