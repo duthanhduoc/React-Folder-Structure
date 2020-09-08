@@ -1,4 +1,4 @@
-import { loginApi } from 'src/api/user.api'
+import { loginApi } from 'src/apis/user.api'
 import * as actions from './Login.actions'
 
 export const login = (payload: ReqLogin) => dispatch => {
