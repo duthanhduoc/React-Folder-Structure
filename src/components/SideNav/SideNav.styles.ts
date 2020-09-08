@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BREAKPOINT, COLOR } from 'src/constants/style'
+import { BREAKPOINT, COLOR } from 'src/constants/styles'
 
 export const Footer = styled.div`
   padding: 0 30px;

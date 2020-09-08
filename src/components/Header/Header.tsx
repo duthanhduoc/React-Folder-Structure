@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { logout, toggleSideNav } from 'src/App/App.actions'
 import { useHistory } from 'react-router-dom'
-import { LogoutIcon } from './HeaderStyles'
+import { LogoutIcon } from './Header.styles'
 import { PATH } from 'src/constants/paths'
 
 interface ReduxProps {
