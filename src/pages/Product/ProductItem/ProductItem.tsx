@@ -1,15 +1,22 @@
 import React, { useEffect } from 'react'
 import MainLayout from 'src/layouts/MainLayout'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 import { getProductItem } from './ProductItem.thunks'
 import { useParams } from 'react-router-dom'
 import { handlePrice } from 'src/helpers/string'
 
-interface ReduxProps {
-  productItem: Product
-  getProductItem(id: string): Promise<ResGetProductItem>
+const mapStateToProps = (state: AppState) => ({
+  productItem: state.productItem.productItem
+})
+
+const mapDispatchToProps = {
+  getProductItem
 }
-interface Props extends ReduxProps {}
+
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+interface Props extends ConnectedProps<typeof connector> {}
+
 function ProductItem(props: Props) {
   const { productItem, getProductItem } = props
   const params: { idProduct: string } = useParams()
@@ -30,12 +37,4 @@ function ProductItem(props: Props) {
   )
 }
 
-const mapStateToProps = state => ({
-  productItem: state.productItem.productItem
-})
-
-const mapDispatchToProps = {
-  getProductItem
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductItem)
+export default connector(ProductItem)

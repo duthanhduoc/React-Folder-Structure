@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 import MainLayout from 'src/layouts/MainLayout'
 import { getProductList } from './ProductList.thunks'
 import { Link } from 'react-router-dom'
@@ -7,11 +7,17 @@ import { PATH } from 'src/constants/paths'
 import { handlePrice } from 'src/helpers/string'
 import { TableContainer } from './ProductList.styles'
 
-interface ReduxProps {
-  productList: Product[]
-  getProductList(): Promise<ResGetProduct>
+const mapStateToProps = (state: AppState) => ({
+  productList: state.productList.productList
+})
+
+const mapDispatchToProps = {
+  getProductList
 }
-interface Props extends ReduxProps {}
+
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+interface Props extends ConnectedProps<typeof connector> {}
 const ProductList = (props: Props) => {
   const { getProductList, productList } = props
 
@@ -57,12 +63,4 @@ const ProductList = (props: Props) => {
   )
 }
 
-const mapStateToProps = state => ({
-  productList: state.productList.productList
-})
-
-const mapDispatchToProps = {
-  getProductList
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList)
+export default connector(ProductList)

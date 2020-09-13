@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 import { login } from './Login.thunks'
 import { Title } from './Login.styles'
 import { useHistory } from 'react-router-dom'
 import { PATH } from 'src/constants/paths'
 
-interface ReduxProps {
-  login(payload: ReqLogin): Promise<ResLogin>
-  loading: boolean
+const mapStateToProps = state => ({
+  loading: state.loading
+})
+
+const mapDispatchToProps = {
+  login
 }
 
-interface Props extends ReduxProps {}
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+interface Props extends ConnectedProps<typeof connector> {}
 
 const Login = (props: Props) => {
   const { login, loading } = props
@@ -72,12 +77,4 @@ const Login = (props: Props) => {
   )
 }
 
-const mapStateToProps = state => ({
-  loading: state.loading
-})
-
-const mapDispatchToProps = {
-  login
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connector(Login)
