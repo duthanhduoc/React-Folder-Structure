@@ -4,12 +4,17 @@ import { Footer, Logo, Menu, Nav } from './SideNav.styles'
 import { PATH } from 'src/constants/paths'
 import home from 'src/assets/images/home.svg'
 import list from 'src/assets/images/list.svg'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 
-interface ReduxProps {
-  closeSideNav: boolean
-}
-interface Props extends ReduxProps {}
+const mapStateToProps = state => ({
+  closeSideNav: state.app.closeSideNav
+})
+
+const mapDispatchToProps = {}
+
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+interface Props extends ConnectedProps<typeof connector> {}
 
 function SideNav(props: Props) {
   const { closeSideNav } = props
@@ -57,10 +62,4 @@ function SideNav(props: Props) {
   )
 }
 
-const mapStateToProps = state => ({
-  closeSideNav: state.app.closeSideNav
-})
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SideNav)
+export default connector(SideNav)

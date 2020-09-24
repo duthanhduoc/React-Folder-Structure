@@ -18,6 +18,7 @@ const mapDispatchToProps = {
 const connector = connect(mapStateToProps, mapDispatchToProps)
 
 interface Props extends ConnectedProps<typeof connector> {}
+
 const ProductList = (props: Props) => {
   const { getProductList, productList } = props
 
