@@ -1,10 +1,10 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Footer, Logo, Menu, Nav } from './SideNav.styles'
-import { PATH } from 'src/constants/paths'
-import home from 'src/assets/images/home.svg'
-import list from 'src/assets/images/list.svg'
-import { connect } from 'react-redux'
+import React from "react"
+import { NavLink } from "react-router-dom"
+import { Footer, Logo, Menu, Nav } from "./SideNav.styles"
+import { PATH } from "src/constants/paths"
+import home from "src/assets/images/home.svg"
+import list from "src/assets/images/list.svg"
+import { connect } from "react-redux"
 
 interface ReduxProps {
   closeSideNav: boolean
@@ -14,7 +14,7 @@ interface Props extends ReduxProps {}
 function SideNav(props: Props) {
   const { closeSideNav } = props
   return (
-    <Nav className={closeSideNav ? 'close' : ''}>
+    <Nav className={closeSideNav ? "close" : ""}>
       <h1>
         <Logo
           href="https://xdevclass.com/"

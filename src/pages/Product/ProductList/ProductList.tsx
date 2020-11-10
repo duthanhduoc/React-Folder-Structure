@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { connect, ConnectedProps } from 'react-redux'
-import MainLayout from 'src/layouts/MainLayout'
-import { getProductList } from './ProductList.thunks'
-import { Link } from 'react-router-dom'
-import { PATH } from 'src/constants/paths'
-import { handlePrice } from 'src/helpers/string'
-import { TableContainer } from './ProductList.styles'
+import React, { useEffect } from "react"
+import { connect, ConnectedProps } from "react-redux"
+import MainLayout from "src/layouts/MainLayout"
+import { getProductList } from "./ProductList.thunks"
+import { Link } from "react-router-dom"
+import { PATH } from "src/constants/paths"
+import { handlePrice } from "src/helpers/string"
+import { TableContainer } from "./ProductList.styles"
 
 const mapStateToProps = (state: AppState) => ({
   productList: state.productList.productList

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 import {
   Route,
   RouteProps,
   Redirect,
   RouteComponentProps
-} from 'react-router-dom'
-import { connect } from 'react-redux'
+} from "react-router-dom"
+import { connect } from "react-redux"
 
 interface ReduxProps {
   isAuthenticated: boolean
@@ -20,7 +20,7 @@ function AuthenticatedGuard(props: Props) {
     <Route
       {...rest}
       render={props => {
-        if (!isAuthenticated && !localStorage.getItem('token')) {
+        if (!isAuthenticated && !localStorage.getItem("token")) {
           return <Redirect to="/login" />
         }
         return <Component {...props} />

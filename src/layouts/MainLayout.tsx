@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
-import Header from 'src/components/Header/Header'
-import SideNav from 'src/components/SideNav/SideNav'
+import React, { ReactNode } from "react"
+import Header from "src/components/Header/Header"
+import SideNav from "src/components/SideNav/SideNav"
 
 interface Props {
   children: ReactNode

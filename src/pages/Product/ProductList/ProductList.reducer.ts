@@ -1,5 +1,5 @@
-import * as types from './ProductList.constants'
-import produce from 'immer'
+import * as types from "./ProductList.constants"
+import produce from "immer"
 
 const initialState = {
   loading: false,

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { connect, ConnectedProps } from 'react-redux'
-import { login } from './Login.thunks'
-import { Title } from './Login.styles'
-import { useHistory } from 'react-router-dom'
-import { PATH } from 'src/constants/paths'
+import React, { useState } from "react"
+import { connect, ConnectedProps } from "react-redux"
+import { login } from "./Login.thunks"
+import { Title } from "./Login.styles"
+import { useHistory } from "react-router-dom"
+import { PATH } from "src/constants/paths"
 
 const mapStateToProps = state => ({
   loading: state.loading
@@ -19,9 +19,9 @@ interface Props extends ConnectedProps<typeof connector> {}
 
 const Login = (props: Props) => {
   const { login, loading } = props
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
   const history = useHistory()
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)

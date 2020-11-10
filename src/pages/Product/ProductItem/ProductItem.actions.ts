@@ -1,4 +1,4 @@
-import * as types from './ProductItem.constants'
+import * as types from "./ProductItem.constants"
 
 export const getProductItemRequested = () => ({
   type: types.GET_PRODUCT_ITEM_REQUESTED

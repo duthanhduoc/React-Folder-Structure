@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
-import MainLayout from 'src/layouts/MainLayout'
-import { connect, ConnectedProps } from 'react-redux'
-import { getProductItem } from './ProductItem.thunks'
-import { useParams } from 'react-router-dom'
-import { handlePrice } from 'src/helpers/string'
+import React, { useEffect } from "react"
+import MainLayout from "src/layouts/MainLayout"
+import { connect, ConnectedProps } from "react-redux"
+import { getProductItem } from "./ProductItem.thunks"
+import { useParams } from "react-router-dom"
+import { handlePrice } from "src/helpers/string"
 
 const mapStateToProps = (state: AppState) => ({
   productItem: state.productItem.productItem
