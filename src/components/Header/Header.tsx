@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { connect } from "react-redux"
+import { connect, ConnectedProps } from "react-redux"
 import { logout, toggleSideNav } from "src/App/App.actions"
 import { useHistory } from "react-router-dom"
 import { LogoutIcon } from "./Header.styles"

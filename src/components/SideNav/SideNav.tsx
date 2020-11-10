@@ -4,7 +4,7 @@ import { Footer, Logo, Menu, Nav } from "./SideNav.styles"
 import { PATH } from "src/constants/paths"
 import home from "src/assets/images/home.svg"
 import list from "src/assets/images/list.svg"
-import { connect } from "react-redux"
+import { connect, ConnectedProps } from "react-redux"
 
 const mapStateToProps = state => ({
   closeSideNav: state.app.closeSideNav
