@@ -5,12 +5,16 @@ import { useHistory } from "react-router-dom"
 import { LogoutIcon } from "./Header.styles"
 import { PATH } from "src/constants/paths"
 
-interface ReduxProps {
-  logout(): { type: string }
-  toggleSideNav(): { type: string }
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {
+  logout,
+  toggleSideNav
 }
 
-interface Props extends ReduxProps {}
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+interface Props extends ConnectedProps<typeof connector> {}
 
 const Header = (props: Props) => {
   const { logout, toggleSideNav } = props
@@ -59,11 +63,4 @@ const Header = (props: Props) => {
   )
 }
 
-const mapStateToProps = state => ({})
-
-const mapDispatchToProps = {
-  logout,
-  toggleSideNav
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connector(Header)
